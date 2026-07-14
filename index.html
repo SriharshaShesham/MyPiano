@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Piano Kids ⭐ Twinkle Twinkle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/main-BEMfX9aZ.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/audio-DpNvZO_z.js">
+    <link rel="stylesheet" crossorigin href="./assets/main-DKgE48_W.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="profileGate" class="view">
+        <h1 class="menu-title">🎹 Piano Kids</h1>
+        <p class="menu-sub">Who's playing today?</p>
+        <div id="gateProfiles" aria-label="Choose a player or sign in"></div>
+      </div>
+
+      <div id="landing" class="view hidden">
+        <header class="landing-top">
+          <button id="landingAvatar" class="profile" title="Profile settings"></button>
+          <span id="cloudChip" class="opt hidden"></span>
+          <button id="switchProfile" class="opt">👥 Switch player</button>
+        </header>
+        <h1 class="menu-title">🎹 Piano Kids</h1>
+        <div class="landing-cards">
+          <div class="big-card" id="learnCard" role="button" tabindex="0">
+            <span class="bc-emoji">📚</span>
+            <span class="bc-title" id="learnTitle">Learning</span>
+            <div class="bc-bar"><div id="overallFill"></div></div>
+            <small id="overallPct">0%</small>
+            <button id="continueBtn">▶ Continue</button>
+          </div>
+          <div class="big-card" id="practiceCard" role="button" tabindex="0">
+            <span class="bc-emoji">🖐️</span>
+            <span class="bc-title">Daily practice</span>
+            <small id="practiceCount"></small>
+            <span class="bc-hint">Finger exercises for both hands</span>
+          </div>
+        </div>
+        <div id="drills" class="hidden"></div>
+      </div>
+
+      <div id="profilePage" class="view hidden">
+        <button id="ppBack" class="opt">← Back</button>
+        <h1 class="menu-title" id="ppTitle"></h1>
+        <div class="pp-card">
+          <label class="pp-row">Name <input id="ppName" maxlength="12" /></label>
+          <button class="pp-row ptoggle" id="ppTutorial"><span>🎓 Tutorial mode</span><span class="state"></span></button>
+          <button class="pp-row ptoggle" id="ppLetters"><span>🔤 Show letters on notes</span><span class="state"></span></button>
+          <button class="pp-row ptoggle" id="ppVideos"><span>🎬 Interactive videos</span><span class="state"></span></button>
+          <button class="pp-row" id="ppSignOut"><span>🚪 Sign out</span></button>
+          <p id="ppWarn" class="chooser-warn hidden"></p>
+        </div>
+      </div>
+
+      <div id="menu" class="view hidden">
+        <button id="menuBack" class="opt menu-back">← Home</button>
+        <h1 class="menu-title">🎹 Piano Kids</h1>
+        <p class="menu-sub">Pick a song and play along!</p>
+        <div id="courses"></div>
+      </div>
+
+      <div id="playview" class="view hidden">
+      <header>
+        <div class="hleft">
+          <button id="back" aria-label="Back">←</button>
+          <button id="pvAvatar" aria-label="Switch player" title="Switch player"></button>
+          <h1 id="lessonTitle">Piano Kids</h1>
+        </div>
+        <div class="hmid">
+          <div id="sources">
+            <button class="src" data-src="screen">👆 Tap</button>
+            <button class="src" data-src="midi">🎹 USB MIDI</button>
+            <button class="src" data-src="mic">🎤 Mic</button>
+          </div>
+          <label id="speed">🐢<input type="range" id="speedRange" min="0.25" max="1.5" step="0.25" value="0.75" /><span id="speedVal">0.75×</span>🐇</label>
+        </div>
+        <div class="hright">
+          <div class="progress"><div id="progressFill"></div><span id="progressText">0/0</span></div>
+          <button id="play">▶ Play</button>
+        </div>
+      </header>
+
+      <nav id="lessons" aria-label="Lessons"></nav>
+
+      <main>
+        <div class="sheet" id="sheet">
+          <div id="legend">
+            <span>Letters name the keys</span>
+            <svg viewBox="0 0 30 52" aria-hidden="true"><g transform="translate(13 42)"><ellipse rx="9" ry="6.5" transform="rotate(-18)"/><line x1="8.4" y1="-2.5" x2="8.4" y2="-34"/></g></svg>
+            <span>short note</span>
+            <svg viewBox="0 0 30 52" aria-hidden="true"><g transform="translate(13 42)"><ellipse class="open" rx="9" ry="6.5" transform="rotate(-18)"/><line x1="8.4" y1="-2.5" x2="8.4" y2="-34"/></g></svg>
+            <span>long note</span>
+          </div>
+        </div>
+        <div id="loopHint">Drag the notes to seek · drag in the top/bottom margin to select a practice loop · tap the margin to clear it</div>
+        <div id="keyIntro" class="hidden"></div>
+        <div id="quiz" class="hidden"></div>
+        <div id="hand" aria-label="Finger guide"></div>
+        <div id="tutor" role="status"></div>
+        <div id="micReadout" class="hidden">🎤 listening…</div>
+      </main>
+
+      <div id="kb" aria-label="Piano keyboard"></div>
+      </div><!-- /playview -->
+
+      <div id="overlay" class="hidden"></div>
+      <div id="coach" class="hidden" role="dialog" aria-label="Coach"></div>
+    </div>
+  </body>
+</html>

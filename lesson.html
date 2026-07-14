@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Piano Lesson — Play the note C</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="./assets/lesson-FXED57XI.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/audio-DpNvZO_z.js">
+    <link rel="stylesheet" crossorigin href="./assets/lesson-CcMnK1JP.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="hleft">
+          <button id="pause" aria-label="Pause">
+            <span></span><span></span>
+          </button>
+          <h1>Play the note C</h1>
+        </div>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+          <span id="progressText">0/10</span>
+        </div>
+      </header>
+
+      <main>
+        <div class="sheet">
+          <!-- Staff: 5 lines, treble clef, three middle-C quarter notes on a
+               ledger line, finger number "1". Pure SVG = crisp at any dpr. -->
+          <svg id="staff" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMid meet" aria-label="Sheet music: three middle C quarter notes">
+            <!-- staff lines -->
+            <g stroke="#111" stroke-width="3">
+              <line x1="20" y1="70"  x2="980" y2="70" />
+              <line x1="20" y1="100" x2="980" y2="100" />
+              <line x1="20" y1="130" x2="980" y2="130" />
+              <line x1="20" y1="160" x2="980" y2="160" />
+              <line x1="20" y1="190" x2="980" y2="190" />
+            </g>
+            <!-- treble clef (text glyph, vector) -->
+            <text id="clef" x="38" y="196" font-size="180">&#119070;</text>
+            <!-- finger number -->
+            <text x="495" y="46" font-size="34" font-weight="600" fill="#111" text-anchor="middle">1</text>
+            <!-- three quarter notes: middle C = first ledger line below staff -->
+            <g id="notes" fill="#111" stroke="#111"></g>
+          </svg>
+        </div>
+
+        <aside id="modal">
+          <svg class="bulb" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18h6" /><path d="M10 21h4" />
+            <path d="M12 3a6 6 0 0 0-4 10.4c.7.7 1.2 1.6 1.4 2.6h5.2c.2-1 .7-1.9 1.4-2.6A6 6 0 0 0 12 3z" />
+          </svg>
+          <p>You’ll need an acoustic piano or keyboard to play this course. Try our Touch Intro course to play piano on your screen!</p>
+          <button id="gotIt">GOT IT</button>
+        </aside>
+      </main>
+
+      <div id="kb" aria-label="Piano keyboard"></div>
+    </div>
+  </body>
+</html>

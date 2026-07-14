@@ -1,0 +1,6 @@
+import{S as y}from"./audio-DpNvZO_z.js";const p=[420,570,720],E=document.getElementById("notes");E.innerHTML=p.map(e=>`
+  <g transform="translate(${e} 220)">
+    <line x1="-26" y1="0" x2="26" y2="0" stroke-width="3.5" />
+    <ellipse rx="14.5" ry="10.5" transform="rotate(-18)" />
+    <line x1="13.5" y1="-4" x2="13.5" y2="-92" stroke-width="4" />
+  </g>`).join("");const c=document.getElementById("kb"),a=48,d=3,l=[0,2,4,5,7,9,11],f=[!0,!0,!1,!0,!0,!0,!1],r=new AudioContext,h=new y(r),k=d*7,m=100/k,i=m*.58;function u(e,t){r.resume(),h.play(t,100),e.classList.add("pressed"),setTimeout(()=>e.classList.remove("pressed"),150)}for(let e=0;e<d;e++)for(let t=0;t<7;t++){const o=a+e*12+l[t],n=document.createElement("div");n.className="wkey",o===60&&(n.classList.add("active"),n.innerHTML='<span class="label">C</span>'),n.addEventListener("pointerdown",()=>u(n,o)),c.appendChild(n)}for(let e=0;e<d;e++)for(let t=0;t<7;t++){if(!f[t])continue;const o=a+e*12+l[t]+1,n=e*7+t,s=document.createElement("div");s.className="bkey",s.style.width=`${i}%`,s.style.left=`${(n+1)*m-i/2}%`,s.addEventListener("pointerdown",()=>u(s,o)),c.appendChild(s)}document.getElementById("gotIt").addEventListener("click",()=>{document.getElementById("modal").classList.add("hidden")});document.getElementById("pause").addEventListener("click",()=>{});
